@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block main %}
+
+<div class="container">
+    <h3> 신규 등록 </h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button class="btn btn-default" type="reset">취 소</button>
+        <button class="btn btn-primary pull-right" type="submit">저 장</button>
+    </form>
+</div>
+
+{% endblock main %}

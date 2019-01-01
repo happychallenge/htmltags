@@ -1,0 +1,9 @@
+venv/
+*.pyc
+.idea
+*.ipynb
+.DS_Store
+media/
+db.sqlite3
+__pycache__
+

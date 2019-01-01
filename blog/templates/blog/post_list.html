@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+<div class="container">
+    <h3>글 목록</h3>
+    <a href="{% url 'post_add' %}" class="btn btn-primary pull-right">신규 글 등록</a> 
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>작성자</td>
+                <td>제 목</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in post_list %}
+            <tr>
+                <td> 
+                    <a href="{% url 'post_detail' post.id %}"> 
+                        {{post.author.first_name}} 
+                    </a>
+                </td>
+                <td> {{post.title}} </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2"> 글이 없습니다.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock main %}
